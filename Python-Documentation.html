@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      html,
+body {
+  min-width: 290px;
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+  #navbar ul {
+    border: 1px solid;
+    height: 207px;
+  }
+
+  #navbar {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+  }
+}
+
+figure{
+  height: auto;
+  width: auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+img {
+  height: auto;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border: 5px solid #888888;
+  box-sizing: border-box;
+}
+
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+}
+
+#navbar {
+  height: 100%;
+  width: 300px;
+  background-color: gray;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  border-right: solid;
+  min-width: 290px;
+}
+nav > ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+}
+
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+#TopBorder{
+  border-top: 1px solid;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
+}
+
+header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Python Programming Documentation</header>
+      <ul>
+        <li id="TopBorder"><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Getting_Started">Getting Started</a></li>
+        <li><a class="nav-link" href="#Basic_Syntax">Basic Syntax</a></li>
+        <li><a class="nav-link" href="#Control_Structures">Control Structures</a></li>
+        <li><a class="nav-link" href="#Functions">Functions</a></li>
+        <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+        <li><a class="nav-link" href="#Lists_and_Loops">Lists and Loops</a></li>
+        <li><a class="nav-link" href="#Dictionaries">Dictionaries</a></li>
+        <li><a class="nav-link" href="#Exception">Exception</a></li>
+        <li><a class="nav-link" href="#Conclusion">Conclusion</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+        <div>
+          <header>
+            Python 3.11.4 documentation
+          </header>
+          <figure> 
+            <img src="https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Person using macbook pro on brown wooden table photo">
+          </figure>
+          <figcaption>
+            Photo by <a href="https://unsplash.com/@jexo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jexo</a> on <a href="https://unsplash.com/photos/yVxUC9I9Cik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+          </figcaption>
+        </div>
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+        <p>Python stands as a versatile and popular programming language, renowned for its simplicity and readability. Its syntax closely resembles natural language, making it an excellent choice for beginners and experienced programmers alike. Python's wide range of applications includes:</p>
+        <ul>
+          <li>
+            <strong>Web Development</strong>: Build dynamic websites and web applications using frameworks like Django and Flask.
+          </li>
+          <li>
+            <strong>Data Analysis</strong>: Analyze and visualize data with libraries like Pandas and Matplotlib.
+          </li>
+          <li>
+            <strong>Scientific Research</strong>: Perform complex calculations and simulations in scientific research fields.
+          </li>
+          <li>
+            <strong>Artificial Intelligence</strong>: Create machine learning models and AI applications using TensorFlow and PyTorch.
+          </li>
+          <li>
+            <strong>Automation</strong>: Automate repetitive tasks, improving efficiency in various domains.
+          </li>
+          <li>
+            <strong>Game Development</strong>: Develop games using tools like Pygame and Unity.
+          </li>
+        </ul>
+        <p>
+          Python, conceived in the late 1980s and released in the early 1990s by Guido van Rossum, has since evolved into a true programming phenomenon. Its hallmark is its human-readable syntax, resembling plain English, which facilitates not only the writing of code but also its comprehension and maintenance. This unique approach empowers newcomers to dive into coding concepts without feeling overwhelmed, while simultaneously enabling experts to focus on crafting intricate solutions.
+        </p>
+        <p>
+The language's intrinsic simplicity doesn't come at the expense of capability. Python finds its home in myriad domains, from web development, scientific computing, and artificial intelligence to data analysis, automation, and game development. It boasts a vibrant ecosystem of libraries and frameworks that amplify its inherent strengths, ensuring that, whatever your pursuit, Python offers the tools and resources to make it a reality.
+        </p>
+        <p>
+Beyond its technical prowess, Python fosters a collaborative and welcoming community. The Python Software Foundation (PSF) plays a vital role in nurturing this community, ensuring the language's continuous development, maintenance, and promotion. Online forums, code repositories, conferences, and tutorials provide platforms for learning, sharing, and growing alongside fellow Python enthusiasts.
+        </p>
+        <p>
+As you embark on this Python journey, remember that every line of code you write is a step toward unlocking a realm of possibilities. From creating dynamic websites and exploring complex data structures to crafting machine learning models and automating everyday tasks, Python is your conduit to innovation and discovery.
+        </p>
+        <p>
+This documentation will guide you through the essentials, enabling you to confidently embrace Python's syntax, control structures, data manipulation capabilities, and much more. So, whether you're seeking to prototype a project, optimize a workflow, or embark on a career in software development, Python is your steadfast companion. Let's delve into the heart of Python programming and unlock its endless potential.
+        </p>
+        </article>
+      </section>
+      <section class="main-section" id="Getting_Started">
+        <header>Getting Started</header>
+        <article>
+        <p>
+          Before you start coding in Python, you'll need to set up the Python interpreter on your system. You can download the latest version from <a href="https://www.python.org/downloads/">python.org</a> and follow the installation instructions for your operating system.
+        </p>
+        <p>
+          Once you have Python installed, let's begin with a classic example:
+        </p>
+        <code>
+          print("Hello, World!")
+        </code>
+        <p>
+          This simple program demonstrates how to use the <strong>print()</strong> function to display text. Running this program confirms that your Python installation is functioning correctly.
+        </p>
+        </article>
+      </section>
+      <section class="main-section" id="Basic_Syntax">
+        <header>Basic Syntax</header>
+        <article>
+        <p>
+          Python's unique feature is its use of indentation to define code blocks. Indentation enhances code readability and enforces a consistent style across projects. For example, consider this if-else statement:
+        </p>
+        <code>
+          <pre>
+x = 10
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is not greater than 5")
+          </pre>
+        </code>
+        <p>
+          In this example, the indentation level dictates the scope of the <strong>if</strong> and <strong>else</strong> blocks. This practice helps to prevent common errors and encourages a clean and organized code structure.
+        </p>
+        </article>
+      </section>
+      <section class="main-section" id="Control_Structures">
+        <header>Control Structures</header>
+        <article>
+        <p>
+          Python offers several control structures for managing program flow. A key structure is the loop, which iterates over a sequence of items. Take a look at this simple loop:
+        </p>
+        <code>
+          <pre>
+for i in range(5):
+    print(i)
+          </pre>
+        </code>
+        <p>
+          The <strong>'for'</strong> loop iterates over the numbers from 0 to 4 and prints each number. This is just a glimpse of Python's control structures, which enable you to create powerful and expressive programs.
+        </p>
+        </article>
+      </section>
+      <section class="main-section" id="Functions">
+        <header>Functions</header>
+        <article>
+        <p>
+          Functions are essential building blocks in Python. They allow you to encapsulate reusable pieces of code, making your programs more modular and maintainable. Defining a function is straightforward:
+        </p>
+        <code>
+          <pre>
+def greet(name):
+    return f"Hello, {name}!"
+
+message = greet("Alice")
+print(message)
+          </pre>
+        </code>
+        <p>
+          In this example, the <strong>'greet()'</strong>' function takes a name as an argument and returns a personalized greeting. Functions are integral to writing clean and efficient Python code.
+        </p>
+        </article>
+      </section>
+            <section class="main-section" id="Data_Types">
+        <header>Data Types</header>
+        <article>
+        <p>
+          Python supports a variety of built-in data types, each serving a specific purpose. Here are a few examples:
+        </p>
+        <ul>
+          <li>
+            <strong>Integer</strong>: Used to represent whole numbers, such as ages or quantities.
+          </li>
+          <li>
+            <strong>String</strong>: Represents textual data, like names or sentences.
+          </li>
+          <li>
+            <strong>Boolean</strong>: Represents truth values, either 'True' or 'False'.
+          </li>
+        </ul>
+        <p>
+          These data types form the foundation of Python programs and allow you to work with various kinds of information effectively.
+        </p>
+        </article>
+      </section>
+            <section class="main-section" id="Lists_and_Loops">
+        <header>Lists and Loops</header>
+        <article>
+        <p>
+          Lists are versatile data structures that can store collections of items. Combining lists with loops offers powerful ways to process and manipulate data. Consider this example:
+        </p>
+        <code>
+          <pre>
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+          </pre>
+        </code>
+        <p>
+          This loop iterates through the list of fruits and prints each one. Lists and loops are fundamental concepts for handling repetitive tasks and managing data collections.
+        </p>
+        </article>
+      </section>
+            <section class="main-section" id="Dictionaries">
+        <header>Dictionaries</header>
+        <article>
+        <p>
+          Dictionaries are Python's way of storing key-value pairs. They enable you to associate pieces of data with meaningful labels. Here's an illustration:
+        </p>
+        <code>
+          <pre>
+person = {
+    "name": "Alice",
+    "age": 30,
+    "is_student": False
+}
+print(person["name"])
+          </pre>
+        </code>
+        <p>
+          In this dictionary, "name," "age," and "is_student" are keys, while their corresponding values are "Alice," 30, and <strong>'False'</strong>. Dictionaries are essential for organizing and retrieving structured data.
+        </p>
+        </article>
+      </section>
+            <section class="main-section" id="Exception">
+        <header>Exception</header>
+        <article>
+        <p>
+          In Python, exceptions are used to handle errors gracefully and prevent crashes. You can use a try-except block to catch and manage exceptions. For instance:
+        </p>
+        <code>
+          <pre>
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+          </pre>
+        </code>
+        <p>
+          In this example, the program tries to divide by zero, which triggers a <strong>'ZeroDivisionError'</strong>. The try-except block captures the error and displays a user-friendly message.
+        </p>
+        </article>
+      </section>
+            <section class="main-section" id="Conclusion">
+        <header>Conclusion</header>
+        <article>
+          <p>
+          This concludes our comprehensive Python documentation. By mastering these core concepts, you're well on your way to becoming a proficient Python programmer. As you progress, remember that Python offers an extensive ecosystem of libraries and resources to help you tackle diverse challenges.
+          </p>
+        <ul>
+          <li>
+            For more in-depth information, consult the <a href="https://docs.python.org/3/" target="_blank">Python official documentation</a>.
+          </li>
+        </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
