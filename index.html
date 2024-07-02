@@ -11,36 +11,27 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1578179194900810"
      crossorigin="anonymous"></script>
   <style>
-      * {
+      /* General styles */
+  * {
   padding: 0;
   margin: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
-  box-sizing: border-box;
-
-  /* Set font size for easy rem calculations
-   * default document font size = 16px, 1rem = 16px, 100% = 16px
-   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
-  */
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px */
   scroll-behavior: smooth;
 }
 
+/* Responsiveness */
 @media (max-width: 768px) {
-  :root {
-    font-size: 20.5%;
+  html {
+    font-size: 20.5%; /* Adjust font size for smaller screens */
   }
-  welcome-section h1 {
+  .welcome-section h1 {
     margin: 10px;
   }
-  welcome-section p {
+  .welcome-section p {
     font-size: 0.5rem;
   }
   .project p {
@@ -48,6 +39,7 @@ html {
     padding: 2px;
   }
 }
+
 @media (max-width: 75em) {
   html {
     font-size: 60%;
@@ -67,29 +59,31 @@ html {
     font-size: 55%;
   }
 }
+
 body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background: var(--color-darkblue);
-    background-image: linear-gradient(
-        100deg,
-        rgba(58, 58, 158, 0.8),
-        rgba(255, 25, 25, 0.8)
-      ),
-      url(https://www.usep.edu.ph/wp-content/uploads/2018/08/eagle.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(
+    100deg,
+    rgba(58, 58, 158, 0.8),
+    rgba(255, 25, 25, 0.8)
+  ),
+  url(https://www.usep.edu.ph/wp-content/uploads/2018/08/eagle.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 h1 {
   font-size: 5rem;
 }
+
 ul {
   list-style: none;
 }
@@ -99,7 +93,7 @@ a {
   color: black;
 }
 
-/*For Navbar*/
+/* Navbar */
 .nav {
   display: flex;
   justify-content: flex-end;
@@ -148,10 +142,8 @@ a {
   color: #222;
   font-weight: bold;
 }
-/*End of Navbar*/
 
-
-/*Welcome Section*/
+/* Welcome Section */
 .welcome-section {
   display: flex;
   flex-direction: column;
@@ -161,15 +153,18 @@ a {
   height: 100vh;
   background-color: #fff;
   background: linear-gradient(
-    62deg, 
-    #3a3d40 0%, 
-    #181719 100%);
+    62deg,
+    #3a3d40 0%,
+    #181719 100%
+  );
 }
-.welcome-section h1 {
+
+.section-title { /* More generic selector */
   color: red;
   margin-top: 6rem;
   text-align: center;
 }
+
 .welcome-section > p {
   font-size: 3rem;
   font-weight: bold;
@@ -180,8 +175,8 @@ a {
   overflow: auto;
 }
 
-/*For the Socials Section*/
-.profile{
+/* Socials Section */
+.profile {
   background: repeating-linear-gradient(
     115deg,
     rgba(255, 0, 0, 0.2),
@@ -191,10 +186,12 @@ a {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.profile h1{
+
+.profile h1 {
   text-align: center;
   padding-bottom: 10px;
 }
+
 .social {
   width: 70vw;
   font-size: 3rem;
@@ -208,15 +205,19 @@ a {
   border-radius: 10%;
   padding: 10px;
 }
+
 .facebook {
   margin-top: 0;
 }
-.free-code-camp{
+
+.free-code-camp {
   margin-bottom: 0;
 }
+
 .social a {
   color: rgb(0, 255, 255);
 }
+
 .social:hover {
   transform: scale(1.1);
   background-color: #ff9900;
@@ -224,29 +225,36 @@ a {
   font-weight: bold;
 }
 
-/*For the Projects Section*/
+/* Projects Section */
 .projects-section {
   background-color: #45567d;
   opacity: 0.8;
 }
-#projects h1 {
+
+.projects-section .section-title { /* Use generic selector */
   text-align: center;
 }
+
 .project-grid {
   position: relative;
   width: 80%;
   max-width: 800px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Allow projects to wrap */
+  justify-content: center; /* Center the grid */
 }
-.image-container{
+
+.image-container {
   display: flex;
   overflow: hidden;
-  padding: 20px
+  padding: 20px;
+  margin: 10px; /* Add margin for spacing */
 }
+
 .image-container img {
   width: 100%;
-  height:100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
@@ -255,23 +263,27 @@ a {
   background-color: #303841;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
+  width: 200px; /* Adjust width for project tiles */
+  margin: 10px; /* Add margin for spacing */
 }
+
 .project p {
   font-size: 1.2rem;
   text-align: center;
   font-weight: bold;
   padding-top: 5px;
 }
+
 .code {
   color: #303841;
   transition: color 0.3s ease-out;
 }
+
 .project:hover .code {
   color: #ff7f50;
 }
 
 /* Footer */
-
 footer {
   font-weight: 300;
   display: flex;
@@ -297,9 +309,11 @@ footer > p {
 footer i {
   vertical-align: middle;
 }
+
 footer a {
   color: white;
 }
+
 @media (max-width: 28.75em) {
   footer {
     flex-direction: column;
@@ -309,7 +323,7 @@ footer a {
     </style>
   </head>
   <body>
-    <!--For NavBar-->
+    <!-- Navbar -->
     <nav id="navbar" class="nav">
       <ul class="nav-list">
         <li>
@@ -323,200 +337,151 @@ footer a {
         </li>
       </ul>
     </nav>
-    <!--End of NavBar-->
 
-    <!--Start of Welcome Section-->
-    <section 
-    id="welcome-section"
-    class="welcome-section">
-      <h1>Welcome to my corner of the digital realm!</h1>
+    <!-- Welcome Section -->
+    <section id="welcome-section" class="welcome-section">
+      <h1 class="section-title">Welcome to my corner of the digital realm!</h1>
       <p>
         "I'm Jeric Jay Serna, a mechanical engineer on a journey through the fascinating worlds of computing and programming. As a devoted follower of Christ and a true life enthusiast, I find immense joy in both learning and sharing knowledge. Whether I'm delving into complex coding languages, teaching sciences and mathematics, or penning down thoughts about life's experiences, I'm dedicated to constant growth and meaningful connections. Join me as I weave together the threads of engineering, faith, and creativity in this collection of my endeavors."
       </p>
     </section>
-    <!--End of Welcome Section-->
 
-    <!--Start of Socials Section-->
+    <!-- Socials Section -->
     <section id="social">
       <div class="profile">
-        <h1>You can also check me in these platforms</h1>
-      <div class="social facebook">
-        <a 
-        href="https://www.facebook.com/jeric.serna"
-        target="_blank" 
-        id="profile-link">
-          <i class="fab fa-facebook"></i> Facebook
-        </a>
-      </div>
-      <div class="social Instagram">
-        <a 
-        href="https://www.instagram.com/ngrjrcj/"
-        id="profile-link"
-        target="_blank">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-      </div>
-      <div class="social twitter">
-        <a
-        href="https://twitter.com/ngrJrcJ"
-        id="profile-link"
-        target="_blank">
-          <i class="fab fa-x-twitter"></i> Twitter
-        </a>
-      </div>
-      <div class="social youtube">
-        <a
-        href="https://www.youtube.com/@ngrJrcJ"
-        id="profile-link"
-        target="_blank">
-          <i class="fab fa-youtube"></i> Youtube
-        </a>
-      </div>
-      <div class="social tiktok">
-        <a
-        href="https://www.tiktok.com/@ngrjrcj"
-        id="profile-link"
-        target="_blank">
-          <i class="fab fa-tiktok"></i> TikTok
-        </a>
-      </div>
-      <div class="social medium">
-        <a
-        href="https://ngrjrcj.medium.com/"
-        id="profile-link"
-        target="_blank">
-          <i class="fab fa-medium"></i> Medium
-        </a>
-      </div>
-      <div class="social linkedIn"
-      id="profile-link"
-        target="_blank">
-        <a
-        href="https://linkedin.com/in/ngrjrcj"
-        id="profile-link"
-        target="_blank">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-      </div>
-      <div class="social spotify">
-        <a
-        href="https://open.spotify.com/artist/1TSddh62a3PDkbL1eY63wF?si=URI3wusuRR-tpgBNBU1yjg"
-        id="profile-link"
-        target="_blank">
-          <i class="fab fa-spotify"></i> Spotify
-        </a>
-      </div>
-      <div class="social free-code-camp">
-        <a
-        href="https://www.freecodecamp.org/ngrjrcj"
-        id="profile-link"
-        target="_blank">
-          <i class="fab fa-free-code-camp"></i> freeCodeCamp
-        </a>
-      </div>
+        <h1 class="section-title">You can also check me in these platforms</h1>
+        <div class="social-links">
+          <!-- Loop for generating social media links (using template literal) -->
+          <div class="social facebook">
+            <a href="https://www.facebook.com/jeric.serna" target="_blank">
+              <i class="fab fa-facebook"></i> Facebook
+            </a>
+          </div>
+          <div class="social instagram">
+            <a href="https://www.instagram.com/ngrjrcj/" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </div>
+          <div class="social twitter">
+            <a href="https://twitter.com/ngrJrcJ" target="_blank">
+              <i class="fab fa-x-twitter"></i> Twitter
+            </a>
+          </div>
+          <div class="social youtube">
+            <a href="https://www.youtube.com/@ngrJrcJ" target="_blank">
+              <i class="fab fa-youtube"></i> Youtube
+            </a>
+          </div>
+          <div class="social tiktok">
+            <a href="https://www.tiktok.com/@ngrjrcj" target="_blank">
+              <i class="fab fa-tiktok"></i> TikTok
+            </a>
+          </div>
+          <div class="social medium">
+            <a href="https://ngrjrcj.medium.com/" target="_blank">
+              <i class="fab fa-medium"></i> Medium
+            </a>
+          </div>
+          <div class="social linkedin">
+            <a href="https://linkedin.com/in/ngrjrcj" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+          <div class="social spotify">
+            <a href="https://open.spotify.com/artist/1TSddh62a3PDkbL1eY63wF?si=URI3wusuRR-tpgBNBU1yjg" target="_blank">
+              <i class="fab fa-spotify"></i> Spotify
+            </a>
+          </div>
+          <div class="social free-code-camp">
+            <a href="https://www.freecodecamp.org/ngrjrcj" target="_blank">
+              <i class="fab fa-free-code-camp"></i> freeCodeCamp
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-    <!--End of Socials Section-->
 
-    <!--Start of Projects Section-->
+    <!-- Projects Section -->
     <section id="projects" class="projects-section">
-      <h1>
-        These are some of my projects
-      </h1>
-      <div id="project-grid">
-        <div class="image-container">
-          <a
-          href="https://codepen.io/Jeric-Jay-Serna/pen/NWeNgag"
-          target="_blank"
-          class="project project-tile"
-        >
-          <img
-            class="project-image"
-            src="https://github.com/free-codeph/FCC-Projects/blob/main/Survey.png?raw=true"
-            alt="project"
-          />
-          <p class="project-title">
-            <span class="code">&lt;</span>
-            Survey Form
-            <span class="code">&#47;&gt;</span>
-          </p>
-        </a>
-        <a
-          href="https://codepen.io/Jeric-Jay-Serna/full/rNoewGZ"
-          target="_blank"
-          class="project project-tile"
-        >
-          <img
-            class="project-image"
-            src="https://github.com/free-codeph/FCC-Projects/blob/main/Tribute.png?raw=true"
-            alt="project"
-          />
-          <p class="project-title">
-            <span class="code">&lt;</span>
-            Tribute Page
-            <span class="code">&#47;&gt;</span>
-          </p>
-        </a>
-        <a
-          href="https://codepen.io/Jeric-Jay-Serna/full/MWZyoOG"
-          target="_blank"
-          class="project project-tile"
-        >
-          <img
-            class="project-image"
-            src="https://github.com/free-codeph/FCC-Projects/blob/main/TechDocu.png?raw=true"
-            alt="project"
-          />
-          <p class="project-title">
-            <span class="code">&lt;</span>
-            Technical Documentation
-            <span class="code">&#47;&gt;</span>
-          </p>
-        </a>
-        <a
-          href="https://codepen.io/Jeric-Jay-Serna/full/vYvGZpO"
-          target="_blank"
-          class="project project-tile"
-        >
-          <img
-            class="project-image"
-            src="https://github.com/free-codeph/FCC-Projects/blob/main/ProdLanding.png?raw=true"
-            alt="project"
-          />
-          <p class="project-title">
-            <span class="code">&lt;</span>
-            Product Landing
-            <span class="code">&#47;&gt;</span>
-          </p>
-        </a>
-        <a
-          href="https://codepen.io/Jeric-Jay-Serna/full/Vwqaywj"
-          target="_blank"
-          class="project project-tile"
-        >
-          <img
-            class="project-image"
-            src="https://github.com/free-codeph/FCC-Projects/blob/main/PersonalPort.png?raw=true"
-            alt="project"
-          />
-          <p class="project-title">
-            <span class="code">&lt;</span>
-            Personal Portfolio
-            <span class="code">&#47;&gt;</span>
-          </p>
-        </a>
-        </div>       
+      <h1 class="section-title">These are some of my projects</h1>
+      <div id="project-grid" class="project-grid">
+        <ul> <!-- Use a UL for project listing -->
+          <li>
+            <a href="https://codepen.io/Jeric-Jay-Serna/pen/NWeNgag" target="_blank" class="project">
+              <div class="image-container">
+                <img
+                  src="https://github.com/free-codeph/FCC-Projects/blob/main/Survey.png?raw=true"
+                  alt="Survey Form Project"
+                />
+              </div>
+              <p class="project-title">
+                <span class="code"><</span>Survey Form<span class="code">/></span>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io/Jeric-Jay-Serna/full/rNoewGZ" target="_blank" class="project">
+              <div class="image-container">
+                <img
+                  src="https://github.com/free-codeph/FCC-Projects/blob/main/Tribute.png?raw=true"
+                  alt="Tribute Page Project"
+                />
+              </div>
+              <p class="project-title">
+                <span class="code"><</span>Tribute Page<span class="code">/></span>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io/Jeric-Jay-Serna/full/MWZyoOG" target="_blank" class="project">
+              <div class="image-container">
+                <img
+                  src="https://github.com/free-codeph/FCC-Projects/blob/main/TechDocu.png?raw=true"
+                  alt="Technical Documentation Project"
+                />
+              </div>
+              <p class="project-title">
+                <span class="code"><</span>Technical Documentation<span class="code">/></span>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io/Jeric-Jay-Serna/full/vYvGZpO" target="_blank" class="project">
+              <div class="image-container">
+                <img
+                  src="https://github.com/free-codeph/FCC-Projects/blob/main/ProdLanding.png?raw=true"
+                  alt="Product Landing Page Project"
+                />
+              </div>
+              <p class="project-title">
+                <span class="code"><</span>Product Landing<span class="code">/></span>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io/Jeric-Jay-Serna/full/Vwqaywj" target="_blank" class="project">
+              <div class="image-container">
+                <img
+                  src="https://github.com/free-codeph/FCC-Projects/blob/main/PersonalPort.png?raw=true"
+                  alt="Personal Portfolio Project"
+                />
+              </div>
+              <p class="project-title">
+                <span class="code"><</span>Personal Portfolio<span class="code">/></span>
+              </p>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
-    <!--End of Projects Section-->
-    
-    <!--Start of Footer-->
+
+    <!-- Footer -->
     <footer>
       <p>
-        &copy; Created for
-        <a href="https://www.freecodecamp.com/" target="_blank"
-          >freeCodeCamp <i class="fab fa-free-code-camp"></i
-        ></a>
+        © Created for
+        <a href="https://www.freecodecamp.com/" target="_blank">
+          freeCodeCamp <i class="fab fa-free-code-camp"></i>
+        </a>
         <br>by: Jeric Jay Serna</br>
       </p>
     </footer>
