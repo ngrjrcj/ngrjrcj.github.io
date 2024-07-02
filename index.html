@@ -21,6 +21,8 @@
 html {
   font-size: 62.5%; /* 1rem = 10px */
   scroll-behavior: smooth;
+  background-color: #181818; /* Dark blue background */
+  color: #E0E0E0; /* Light gray text */
 }
 
 /* Responsiveness */
@@ -88,7 +90,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #E0E0E0; /* Light gray text */
 }
 
 /* Navbar */
@@ -101,9 +103,9 @@ a {
   width: 100%;
   background: linear-gradient(
     120deg,
-    rgb(0, 0, 0),
-    rgb(127, 127, 127),
-    rgb(255, 255, 255)
+    #181818, /* Dark blue background */
+    #222222, /* Slightly darker for gradient */
+    #282828 /* Even darker for gradient */
   );
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   z-index: 10;
@@ -141,19 +143,13 @@ a {
 
 .nav-list a:hover {
   transform: scale(1.1);
-  background-color: #E5E4E2;
-  color: #222;
-  font-weight: bold;
+  background-color: #282828; /* Darker shade on hover */
+  color: #FF9900; /* Orange link text on hover */
 }
 
 /* Socials Section */
 .profile {
-  background: repeating-linear-gradient(
-    115deg,
-    rgba(255, 0, 0, 0.2),
-    rgba(0, 255, 0, 0.2),
-    rgba(0, 0, 255, 0.2)
-  );
+  background-color: #282828; /* Darker shade for profile */
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 100px; /* Spacing between header and socials */
@@ -180,28 +176,25 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  border: 1px solid;
+  color: #E0E0E0; /* Light gray text */
+  border: 1px solid #E0E0E0; /* Light gray border */
   margin: 10px 0; /* Spacing between socials */
   border-radius: 10%;
   padding: 10px;
 }
 
 .social a {
-  color: rgb(0, 255, 255);
+  color: #00C9FF; /* Teal link text */
 }
 
 .social:hover {
-  transform: scale(1.1);
-  background-color: #ff9900;
-  color: #222;
-  font-weight: bold;
+  background-color: #FF9900; /* Orange background on hover */
+  color: #E0E0E0; /* Light gray text on hover */
 }
 
 /* Projects Section */
 .projects-section {
-  background-color: #45567d;
-  opacity: 0.8;
+  background-color: #222222; /* Darker shade for projects */
   padding-top: 30px; /* Spacing between socials and projects */
 }
 
@@ -230,7 +223,7 @@ a {
 }
 
 .project {
-  background-color: #303841;
+  background-color: #282828; /* Darker shade for project tiles */
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   width: 200px;
@@ -245,12 +238,12 @@ a {
 }
 
 .code {
-  color: #303841;
+  color: #282828; /* Darker shade for code */
   transition: color 0.3s ease-out;
 }
 
 .project:hover .code {
-  color: #ff7f50;
+  color: #FF9900; /* Orange color on hover */
 }
 
 /* Footer */
