@@ -28,15 +28,11 @@ html {
   html {
     font-size: 20.5%; /* Adjust font size for smaller screens */
   }
-  .welcome-section h1 {
-    margin: 10px;
+  .project-grid {
+    flex-direction: column; /* Projects stack vertically on mobile */
   }
-  .welcome-section p {
-    font-size: 0.5rem;
-  }
-  .project p {
-    font-size: 0.5rem;
-    padding: 2px;
+  .project {
+    width: 100%; /* Project tiles take full width on mobile */
   }
 }
 
@@ -80,12 +76,14 @@ body::before {
   background-position: center;
 }
 
-h1 {
-  font-size: 5rem;
+h1, h2 {
+  font-size: 3rem; /* Reduced font size for smaller headings */
 }
 
 ul {
   list-style: none;
+  padding: 0; /* Remove list padding */
+  margin: 0; /* Remove list margin */
 }
 
 a {
@@ -96,7 +94,7 @@ a {
 /* Navbar */
 .nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* Align links and logo */
   position: fixed;
   top: 0;
   left: 0;
@@ -109,27 +107,32 @@ a {
   );
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   z-index: 10;
+  padding: 1rem; /* Add padding for better spacing */
 }
 
 .nav-list {
   display: flex;
-  margin-right: 2rem;
+  margin-right: 0; /* Remove right margin from nav list */
 }
 
 @media (max-width: 28.75em) {
   .nav {
-    justify-content: center;
+    justify-content: center; /* Center links on mobile */
   }
 
   .nav-list {
     margin: 0 1rem;
   }
+
+  .nav-list li {
+    margin-left: 1rem; /* Add left margin to links on mobile */
+  }
 }
 
 .nav-list a {
   display: block;
-  font-size: 2.2rem;
-  padding: 2rem;
+  font-size: 2rem;
+  padding: 1rem 2rem; /* Adjusted padding for better mobile look */
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, font-weight 0.3s ease-in-out;
   border: none;
   cursor: pointer;
@@ -143,40 +146,6 @@ a {
   font-weight: bold;
 }
 
-/* Welcome Section */
-.welcome-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-color: #fff;
-  background: linear-gradient(
-    62deg,
-    #3a3d40 0%,
-    #181719 100%
-  );
-}
-
-.section-title { /* More generic selector */
-  color: red;
-  margin-top: 6rem;
-  text-align: center;
-  width: 90%; /* Limit the width of the heading */
-}
-
-.welcome-section > p {
-  font-size: 3rem;
-  font-weight: bold;
-  font-style: italic;
-  color: #eee;
-  text-align: center;
-  padding: 25px;
-  overflow: auto;
-  width: 90%; /* Limit the width of the paragraph */
-}
-
 /* Socials Section */
 .profile {
   background: repeating-linear-gradient(
@@ -187,33 +156,35 @@ a {
   );
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-top: 100px; /* Spacing between header and socials */
 }
 
 .profile h1 {
   text-align: center;
   padding-bottom: 10px;
+  font-size: 2.5rem; /* Adjusted font size */
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column; /* Socials stack vertically */
+  align-items: center;
+  width: 80%; /* Adjust width for smaller screens */
+  margin: 0 auto; /* Center horizontally */
 }
 
 .social {
-  width: 70vw;
-  font-size: 3rem;
+  width: 100%; /* Socials take full width on mobile */
+  font-size: 2rem; /* Adjusted font size */
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   color: black;
   border: 1px solid;
-  margin: 10px auto;
+  margin: 10px 0; /* Spacing between socials */
   border-radius: 10%;
   padding: 10px;
-}
-
-.facebook {
-  margin-top: 0;
-}
-
-.free-code-camp {
-  margin-bottom: 0;
 }
 
 .social a {
@@ -231,10 +202,7 @@ a {
 .projects-section {
   background-color: #45567d;
   opacity: 0.8;
-}
-
-.projects-section .section-title { /* Use generic selector */
-  text-align: center;
+  padding-top: 30px; /* Spacing between socials and projects */
 }
 
 .project-grid {
@@ -243,15 +211,15 @@ a {
   max-width: 800px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Allow projects to wrap */
-  justify-content: center; /* Center the grid */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .image-container {
   display: flex;
   overflow: hidden;
   padding: 20px;
-  margin: 10px; /* Add margin for spacing */
+  margin: 10px;
 }
 
 .image-container img {
@@ -265,8 +233,8 @@ a {
   background-color: #303841;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
-  width: 200px; /* Adjust width for project tiles */
-  margin: 10px; /* Add margin for spacing */
+  width: 200px;
+  margin: 10px;
 }
 
 .project p {
@@ -302,6 +270,7 @@ footer {
   );
   border-image-slice: 1;
   color: white;
+  margin-top: 30px; /* Spacing between projects and footer */
 }
 
 footer > p {
@@ -329,9 +298,6 @@ footer a {
     <nav id="navbar" class="nav">
       <ul class="nav-list">
         <li>
-          <a href="#welcome-section">About</a>
-        </li>
-        <li>
           <a href="#projects">Projects</a>
         </li>
         <li>
@@ -340,18 +306,10 @@ footer a {
       </ul>
     </nav>
 
-    <!-- Welcome Section -->
-    <section id="welcome-section" class="welcome-section">
-      <h1 class="section-title">Welcome to my corner of the digital realm!</h1>
-      <p>
-        "I'm Jeric Jay Serna, a mechanical engineer on a journey through the fascinating worlds of computing and programming. As a devoted follower of Christ and a true life enthusiast, I find immense joy in both learning and sharing knowledge. Whether I'm delving into complex coding languages, teaching sciences and mathematics, or penning down thoughts about life's experiences, I'm dedicated to constant growth and meaningful connections. Join me as I weave together the threads of engineering, faith, and creativity in this collection of my endeavors."
-      </p>
-    </section>
-
     <!-- Socials Section -->
     <section id="social">
       <div class="profile">
-        <h1 class="section-title">You can also check me in these platforms</h1>
+        <h1>You can also check me in these platforms</h1>
         <div class="social-links">
           <!-- Loop for generating social media links (using template literal) -->
           <div class="social facebook">
@@ -405,9 +363,9 @@ footer a {
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
-      <h1 class="section-title">These are some of my projects</h1>
+      <h1>These are some of my projects</h1>
       <div id="project-grid" class="project-grid">
-        <ul> <!-- Use a UL for project listing -->
+        <ul>
           <li>
             <a href="https://codepen.io/Jeric-Jay-Serna/pen/NWeNgag" target="_blank" class="project">
               <div class="image-container">
